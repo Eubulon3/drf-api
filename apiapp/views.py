@@ -197,3 +197,7 @@ class ManageMoneyViewSet(viewsets.ModelViewSet):
             if query is not None:
                 serializer.save(target = query)
 
+class UserListView(generics.ListAPIView):
+    User = get_user_model()
+    serializer_class = serializers.UserSerializers
+    queryset = User.objects.all()

@@ -18,6 +18,7 @@ router.register("managemoney", views.ManageMoneyViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
+    path("userlist/", views.UserListView.as_view(), name = "userlist"),
     path("register/", views.CreateUserView.as_view(), name = "register"),
     path("myprofile/", views.MyProfileListView.as_view(), name = "myprofile"),
     path("myfriends/", views.MyFriendsListView.as_view(), name = "myfrien ds"),
