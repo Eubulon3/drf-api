@@ -26,5 +26,6 @@ urlpatterns = [
     path("myschedule/", views.MyScheduleListView.as_view(), name = "myschedule"),
     path("mypayment/", views.MyPaymentListView.as_view(), name = "mypayment"),
     path("searchsche/", views.SearchSchedule.as_view(), name = "searchsche"),
+    path("hostschedule/", views.HostScheduleListView.as_view(), name = "hostschedule")
     # path("scheduledetail/", views.ScheduleListView.as_view(), name = "scheduledetail"),
 ]

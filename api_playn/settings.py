@@ -37,7 +37,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    "https://localhost:3000"
+    "http://localhost:3000"
 ]
 
 ROOT_URLCONF = 'api_playn.urls'

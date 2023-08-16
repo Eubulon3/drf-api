@@ -201,3 +201,11 @@ class UserListView(generics.ListAPIView):
     User = get_user_model()
     serializer_class = serializers.UserSerializers
     queryset = User.objects.all()
+
+class HostScheduleListView(generics.ListAPIView):
+    serializer_class = serializers.ScheduleSerializers
+    queryset = Schedule.objects.all()
+
+    def query_set(self):
+        return self.queryset.filter(scheduled_by = self.request.user)
+
