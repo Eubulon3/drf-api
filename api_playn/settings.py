@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-q0(15pxso)=(1+kt=(ns=1qh=^i6tb@*dz_e5(l)fh04mh0b80
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 INSTALLED_APPS = [
@@ -75,20 +75,16 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
 }
 
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'api_playn',
+        "USER": "postgres", # セキュリティ上良くないが直接書き込みむ
+        "PASSWORD": "shu01313814", # できれば環境変数などを使って違う場所から持ってくる
+        "HOST": "",
+        "PORT": ""
     }
 }
-
-
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -105,10 +101,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
-
 LANGUAGE_CODE = 'ja'
 
 TIME_ZONE = 'Asia/Tokyo'
@@ -120,15 +112,12 @@ USE_TZ = True
 #↓オリジナルのuserモデルを作成する際は宣言が必要
 AUTH_USER_MODEL = "apiapp.User"
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR/'static',]
+STATIC_ROOT = BASE_DIR/'staticfiles'
+
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "media/"
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

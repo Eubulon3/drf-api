@@ -206,6 +206,6 @@ class HostScheduleListView(generics.ListAPIView):
     serializer_class = serializers.ScheduleSerializers
     queryset = Schedule.objects.all()
 
-    def query_set(self):
+    def get_queryset(self):
         return self.queryset.filter(scheduled_by = self.request.user)
 

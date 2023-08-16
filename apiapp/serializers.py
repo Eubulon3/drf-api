@@ -16,7 +16,6 @@ class UserSerializers(serializers.ModelSerializer):
     
     #balidated_data: validation後のデータ(辞書型)
     def create(self, validated_data):
-
         user = get_user_model().objects.create_user(**validated_data)
         return user
 
