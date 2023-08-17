@@ -87,7 +87,7 @@ SIMPLE_JWT = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         "URL": os.environ.get("DB_URL"),
         'NAME': os.environ.get("DB_NAME"),
         "USER": os.environ.get("DB_USER"),
