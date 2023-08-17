@@ -47,7 +47,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "https://takuten-2023-gamma.vercel.app",
 ]
 
 ROOT_URLCONF = 'api_playn.urls'
