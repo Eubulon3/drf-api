@@ -91,8 +91,8 @@ DATABASES = {
         'NAME': 'api_playn',
         "USER": os.environ.get("DB_USER"),
         "PASSWORD": os.environ.get("DB_PASSWORD"),
-        "HOST": "",
-        "PORT": ""
+        "HOST": os.environ.get("DB_HOST"),
+        "PORT": os.environ.get("DB_PORT"),
     }
 }
 
