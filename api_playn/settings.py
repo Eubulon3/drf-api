@@ -1,6 +1,9 @@
 from pathlib import Path
 from datetime import timedelta
 import os
+# 環境変数
+from dotenv import load_dotenv
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -15,6 +18,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "*",
     ]
+
 
 
 INSTALLED_APPS = [
@@ -85,8 +89,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'api_playn',
-        "USER": "postgres", # セキュリティ上良くないが直接書き込みむ
-        "PASSWORD": "shu01313814", # できれば環境変数などを使って違う場所から持ってくる
+        "USER": os.environ.get("DB_USER"),
+        "PASSWORD": os.environ.get("DB_PASSWORD"),
         "HOST": "",
         "PORT": ""
     }
