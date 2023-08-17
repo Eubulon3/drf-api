@@ -8,11 +8,12 @@ SECRET_KEY = 'django-insecure-q0(15pxso)=(1+kt=(ns=1qh=^i6tb@*dz_e5(l)fh04mh0b80
 
 DEBUG = True
 
+# ALLOWED_HOSTS = [
+#     '.vercel.app',
+#     'localhost',
+#     ]
 ALLOWED_HOSTS = [
-    '.vercel.app',
-    'localhost',
-    ".now.sh",
-    "*"
+    "*",
     ]
 
 
@@ -118,8 +119,9 @@ USE_TZ = True
 AUTH_USER_MODEL = "apiapp.User"
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'staticfiles_build', 'static'),
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "media/"
